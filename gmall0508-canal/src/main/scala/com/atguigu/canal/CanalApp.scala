@@ -7,6 +7,7 @@ import com.alibaba.fastjson.JSONObject
 import com.alibaba.otter.canal.client.{CanalConnector, CanalConnectors}
 import com.alibaba.otter.canal.protocol.CanalEntry.{EntryType, EventType, RowChange, RowData}
 import com.alibaba.otter.canal.protocol.{CanalEntry, Message}
+import com.atguigu.dw.gmall.mock.constant.ConstantUtil
 import com.google.protobuf.ByteString
 
 /**
@@ -57,7 +58,9 @@ object CanalApp {
                   for (column <- columnsList) {
                     jsonObj.put(column.getName, column.getValue)
                   }
-                  println(jsonObj.toString)
+                  //println(jsonObj.toString)
+                  //7. 写入到Kafka
+                  MykafkaProducerUtils.send(ConstantUtil.ORDER_TOPIC,jsonObj.toString)
                 }
               }
             }

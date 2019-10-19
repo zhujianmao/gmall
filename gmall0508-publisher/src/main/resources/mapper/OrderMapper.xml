@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper SYSTEM "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.atguigu.realtime.gmall0508publisher.dao.DauDao">
+<mapper namespace="com.atguigu.realtime.gmall0508publisher.dao.OrderDao">
 
 
-    <select id="getHourDau" resultMap="hourDauList">
-        select LOGHOUR,count(UID) COUNT from GMALL_DAU where LOGDATE = #{date} group by LOGHOUR
+    <select id="getHourAmount" resultMap="hourOrderList">
+        select CREATE_HOUR,sum(TOTAL_AMOUNT) SUM from GMALL_ORDER_INFO where CREATE_DATE = #{time} group by CREATE_HOUR
     </select>
-    <resultMap id="hourDauList" type="java.util.Map"/>
+    <resultMap id="hourOrderList" type="java.util.Map"/>
 
-    <select id="getDayDau" resultType="java.lang.Long">
-        select count (*) from GMALL_DAU where LOGDATE = #{date}
+    <select id="getDayTotalAmount" resultType="java.lang.Double">
+        select sum(TOTAL_AMOUNT) from GMALL_ORDER_INFO where CREATE_DATE = #{time}
     </select>
 
 </mapper>

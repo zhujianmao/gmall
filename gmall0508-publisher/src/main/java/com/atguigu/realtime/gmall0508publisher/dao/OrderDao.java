@@ -3,9 +3,9 @@ package com.atguigu.realtime.gmall0508publisher.dao;
 import java.util.List;
 import java.util.Map;
 
-public interface DauDao {
+public interface OrderDao {
 
-    Long  getDayDau(String date);
+    Double  getDayTotalAmount(String date);
 
-    List<Map> getHourDau(String date);
+    List<Map> getHourAmount(String date);
 }
