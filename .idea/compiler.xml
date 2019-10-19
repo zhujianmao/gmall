@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="dw-chart (1)" />
+        <module name="gmall0508-canal" />
+        <module name="gmall0508-common" />
+        <module name="gmall0508-hive2es" />
+        <module name="gmall0508-logger" />
+        <module name="gmall0508-publisher" />
+        <module name="gmall0508-realtime" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="dw-chart" target="1.8" />
+      <module name="dw-chart (2)" target="1.6" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
